@@ -21,19 +21,19 @@ typedef struct {
 
 typedef struct {
     int codigoProd;
-    char[100] nomeProd;
+    char nomeProd[100];
     float preco;
     int estoque;
-    char nomeFornecedor;
+    char nomeFornecedor[100];
     long int foneFornecedor;
 }produto;
 
 typedef struct {
     int matricula;
-    char[100] nomeFunc;
-    char[100] cargo;
+    char nomeFunc[100];
+    char cargo[100];
     float salario;
-    char[100] login;
+    char login[100];
     int senha;//possível alterar para um vetor de char também pra deixar a senha alfa-numerica
 }funcionario;
 
