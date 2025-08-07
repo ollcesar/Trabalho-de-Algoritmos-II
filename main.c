@@ -13,11 +13,11 @@ Código (único), código do produto, matrícula do funcionário, data, quantida
 Relacionamento: Venda relaciona Produto e Funcionário
                 pois uma venda depende de um produto disponível no estoque e de um funcionário que realizou a venda.
 */
-typedef struct data{
+typedef struct {
     int dia;
     int mes;
     int ano;
-}
+}data;
 
 typedef struct {
     int codigoProd;
