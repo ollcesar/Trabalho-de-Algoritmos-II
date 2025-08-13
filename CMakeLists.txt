@@ -3,4 +3,5 @@ project(Trabalho_de_Algoritmos_II C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Trabalho_de_Algoritmos_II main.c)
+add_executable(Trabalho_de_Algoritmos_II main.c
+)

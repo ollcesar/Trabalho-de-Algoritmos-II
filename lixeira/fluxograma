@@ -1,0 +1,43 @@
+SISTEMA PADARIA
+│
+├── [Menu Principal]
+│    │
+│    ├── 1. Gerenciar Produtos
+│    │     │
+│    │     ├── 1. Cadastrar Produto   → função cadastrarProduto(produto **vet, int *qtd, int *cap)
+│    │     ├── 2. Listar Produtos     → função listarProdutos(produto *vet, int qtd)
+│    │     ├── 3. Alterar Produto     → função alterarProduto(produto *vet, int qtd)
+│    │     ├── 4. Excluir Produto     → função excluirProduto(produto **vet, int *qtd, int *cap)
+│    │     └── 5. Voltar
+│    │
+│    ├── 2. Gerenciar Funcionários
+│    │     │
+│    │     ├── 1. Cadastrar Funcionário  → cadastrarFuncionario(funcionario **vet, int *qtd, int *cap)
+│    │     ├── 2. Listar Funcionários    → listarFuncionarios(funcionario *vet, int qtd)
+│    │     ├── 3. Alterar Funcionário    → alterarFuncionario(funcionario *vet, int qtd)
+│    │     ├── 4. Excluir Funcionário    → excluirFuncionario(funcionario **vet, int *qtd, int *cap)
+│    │     └── 5. Voltar
+│    │
+│    ├── 3. Gerenciar Vendas  (opcional agora, mas já deixa no menu)
+│    │     ├── 1. Registrar Venda
+│    │     ├── 2. Listar Vendas
+│    │     └── 3. Voltar
+│    │
+│    └── 4. Sair
+│
+├── [Funções Iniciais]
+│    ├── inicializarProdutos(produto **vet, int *cap)       → malloc(cap inicial)
+│    ├── inicializarFuncionarios(funcionario **vet, int *cap)
+│    └── inicializarVendas(venda **vet, int *cap)           (opcional por enquanto)
+│
+├── [Alocação Dinâmica]
+│    - produtos: produto *produtos;
+│    - funcionarios: funcionario *funcionarios;
+│    - vendas: venda *vendas; (opcional agora)
+│    - capacidade e quantidade controladas por variáveis.
+│    - uso de realloc quando encher o vetor.
+│
+└── [Ponteiros]
+     - Vetores dinâmicos são ponteiros para struct.
+     - Funções CRUD recebem ponteiros para esses vetores e ponteiros para qtd/capacidade.
+     - Busca retorna ponteiro para struct encontrada.
