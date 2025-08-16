@@ -1,100 +1,90 @@
-SISTEMA DE GERENCIAMENTO DE PADARIA - ENTREGA 2
+--------------------------------------------------
+SISTEMA DE GERENCIAMENTO DE PADARIA - EXPLICAÇÃO
+--------------------------------------------------
 
-1. ESTRUTURAS DO SISTEMA:
+1. ESTRUTURAS DE DADOS
+--------------------------------
+1.1 data (armazena datas)
+   - dia: dia do mês (1-31)
+   - mes: mês do ano (1-12)
+   - ano: ano com 4 dígitos
 
-1.1 Estrutura de Produto:
-- codigoProd (int): identificador único do produto
-- nomeProd (string): nome do produto (100 caracteres)
-- preco (float): preço unitário
-- estoque (int): quantidade em estoque
-- nomeFornecedor (string): nome do fornecedor
-- foneFornecedor (long int): telefone do fornecedor
+1.2 produto (cadastro de produtos)
+   - codigoProd: código único (não se repete)
+   - nomeProd: nome do produto (100 caracteres)
+   - preco: preço unitário
+   - estoque: quantidade disponível
+   - nomeFornecedor: nome do fornecedor
+   - foneFornecedor: telefone do fornecedor
 
-1.2 Estrutura de Funcionário:
-- matricula (int): identificador único
-- nomeFunc (string): nome completo
-- cargo (string): função na padaria
-- salario (float): remuneração
-- login (string): nome de usuário
-- senha (string): senha de acesso
+1.3 funcionario (registro de funcionários)
+   - matricula: número único de identificação
+   - nomeFunc: nome completo
+   - cargo: função na padaria
+   - salario: valor do salário
+   - login: nome de usuário
+   - senha: senha de acesso
 
-1.3 Estrutura de Venda:
-- codigoVenda (int): identificador único
-- prodVendido (int): código do produto vendido
-- vendedor (int): matrícula do funcionário
-- diaDaVenda (data): struct com dia, mês e ano
-- quantidadeVendida (int): quantidade do produto
+1.4 venda (registro de vendas)
+   - codigoVenda: identificador único
+   - prodVendido: código do produto vendido
+   - vendedor: matrícula do funcionário
+   - diaDaVenda: data da venda
+   - quantidadeVendida: qtd. vendida
 
-2. FUNCIONAMENTO DO SISTEMA:
+2. FUNCIONAMENTO DO SISTEMA
+--------------------------------
+2.1 Menu Principal
+   - 1. Produtos (CRUD completo)
+   - 2. Funcionários (CRUD completo)
+   - 3. Vendas (em desenvolvimento)
+   - 4. Sair
 
-2.1 Alocação Dinâmica:
-- Todas as listas (produtos, funcionários, vendas) usam alocação dinâmica
-- Começam com capacidade zero (NULL)
-- Aumentam conforme necessário (dobrando a capacidade)
-- Redimensionam quando itens são removidos
+2.2 Operações CRUD
+   - Create: Cadastrar novos itens
+   - Read: Listar itens cadastrados
+   - Update: Editar informações
+   - Delete: Remover registros
 
-2.2 Menu Principal:
-1. Produtos (CRUD completo)
-2. Funcionários (em desenvolvimento)
-3. Sair
+3. FUNÇÕES PRINCIPAIS
+--------------------------------
+3.1 Para Produtos:
+   - cadastrarProduto()
+   - listarProdutos()
+   - editarProduto()
+   - excluirProduto()
+   - buscarProduto()
 
-2.3 Menu de Produtos:
-1. Cadastrar:
-   - Valida código único
-   - Recebe todos os campos
-   - Aloca memória se necessário
+3.2 Para Funcionários:
+   - cadastrarFuncionario()
+   - listarFuncionarios()
+   - editarFuncionario()
+   - excluirFuncionario()
+   - buscarFuncionario()
 
-2. Listar:
-   - Mostra todos os produtos
-   - Formato organizado
+4. O QUE FALTA IMPLEMENTAR
+--------------------------------
+4.1 Para próxima entrega:
+   - Persistência em arquivos binários
+   - CRUD completo para vendas
+   - Relacionamento entre estruturas
+   - Validações de integridade
 
-3. Excluir:
-   - Busca por código
-   - Remove e realoca memória
-   - Atualiza contadores
+4.2 Para versão final:
+   - Geração de relatórios
+   - Consultas avançadas
+   - Pré-cadastros iniciais
+   - Melhor tratamento de erros
 
-4. Voltar
+5. INSTRUÇÕES DE USO
+--------------------------------
+1. Compilar com CodeBlocks 25.03
+2. Executar o programa .exe
+3. Navegar pelos menus
+4. Dados são mantidos em memória
+   (será implementado salvamento)
 
-3. ARQUIVOS DO PROJETO:
-
-3.1 Arquivos Fonte:
-- padaria.c (código principal)
-- (outros .c/.h quando necessário)
-
-3.2 Arquivos de Dados:
-- produtos.dat (binário com produtos)
-- funcionarios.dat (binário com funcionários)
-- vendas.dat (binário com vendas)
-
-4. COMPILAÇÃO E EXECUÇÃO:
-
-4.1 Compilar:
-gcc padaria.c -o padaria
-
-4.2 Executar:
-./padaria (Linux/macOS)
-padaria.exe (Windows)
-
-5. INSTRUÇÕES PARA O PROFESSOR:
-
-5.1 Testar as Funcionalidades:
-1. Cadastre vários produtos
-2. Liste os produtos
-3. Exclua produtos
-4. Verifique a consistência dos dados
-
-5.2 Pontos de Avaliação:
-- Alocação dinâmica correta
-- CRUD funcional de produtos
-- Persistência em arquivos binários
-- Controle de memória adequado
-
-6. DESENVOLVEDORES:
-[Nome 1] [Matrícula]
-[Nome 2] [Matrícula]
-[Nome 3] [Matrícula]
-[Nome 4] [Matrícula]
-
-7. OBSERVAÇÕES:
-- Entrega 2 focada no CRUD de produtos
-- Funcionários e vendas serão implementados nas próximas entregas
+--------------------------------------------------
+OBS: Este é um sistema acadêmico desenvolvido
+para a disciplina de Algoritmos e Programação II
+--------------------------------------------------
