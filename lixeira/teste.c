@@ -17,7 +17,7 @@ typedef struct {
     float preco;
     int estoque;
     char nomeFornecedor[100];
-    long int foneFornecedor;
+    char foneFornecedor[20];
 } produto;
 
 typedef struct {
@@ -116,7 +116,9 @@ void cadastrarProduto() {
     listaProdutos[qtdProdutos].nomeFornecedor[strcspn(listaProdutos[qtdProdutos].nomeFornecedor, "\n")] = '\0';
 
     printf("Telefone fornecedor: ");
-    scanf("%ld", &listaProdutos[qtdProdutos].foneFornecedor);
+    //limparBuffer();
+    fgets(listaProdutos[qtdProdutos].foneFornecedor, 20, stdin);  // Alterado para fgets
+    listaProdutos[qtdProdutos].foneFornecedor[strcspn(listaProdutos[qtdProdutos].foneFornecedor, "\n")] = '\0';
 
     qtdProdutos++;
     printf("\nProduto cadastrado com sucesso!\n");
@@ -138,7 +140,7 @@ void listarProdutos() {
         printf("Preco: %.2f\n", listaProdutos[i].preco);
         printf("Estoque: %d\n", listaProdutos[i].estoque);
         printf("Fornecedor: %s\n", listaProdutos[i].nomeFornecedor);
-        printf("Telefone: %ld\n", listaProdutos[i].foneFornecedor);
+        printf("Telefone: %s\n", listaProdutos[i].foneFornecedor);
     }
     pausar();
 }
@@ -195,10 +197,13 @@ void editarProduto() {
         strcpy(listaProdutos[pos].nomeFornecedor, novoFornecedor);
     }
 
-    printf("Novo telefone (atual: %ld): ", listaProdutos[pos].foneFornecedor);
-    long int novoTelefone;
-    if (scanf("%ld", &novoTelefone) == 1) {
-        listaProdutos[pos].foneFornecedor = novoTelefone;
+    printf("Novo telefone (atual: %s): ", listaProdutos[pos].foneFornecedor);
+    char novoTelefone[20];
+    //limparBuffer();
+    fgets(novoTelefone, 20, stdin);
+    if (strlen(novoTelefone) > 1) {
+        novoTelefone[strcspn(novoTelefone, "\n")] = '\0';
+        strcpy(listaProdutos[pos].foneFornecedor, novoTelefone);
     }
 
     printf("\nProduto atualizado com sucesso!\n");
