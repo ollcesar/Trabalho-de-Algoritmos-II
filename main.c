@@ -46,3 +46,17 @@ typedef struct{
     data diaDaVenda;
     int quantidadeVendida;
 }venda;
+
+int resizeVetor(void *vetor, int tamanhoDoArray, int correcao){
+    if(sizeof(vetor[0])==sizeof(produto)){
+       tamanhoDoArray += correcao;
+       vetor = (produto *) realloc(vetor, tamanhoDoArray*sizeof(produto));
+    } else if(sizeof(vetor[0])==sizeof(funcionatio)){
+       tamanhoDoArray += correcao;
+       vetor = (funcionario *) realloc(vetor, tamanhoDoArray*sizeof(funcionario));
+    } else if(sizeof(vetor[0])==sizeof(venda)){
+       tamanhoDoArray += correcao;
+       vetor = (venda *) realloc(vetor, tamanhoDoArray*sizeof(venda));
+    }
+    return tamanhoDoArray;
+}
