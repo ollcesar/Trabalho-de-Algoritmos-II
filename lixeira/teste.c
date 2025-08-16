@@ -37,7 +37,7 @@ typedef struct {
     int quantidadeVendida;
 } venda;
 
-// VARIÁVEIS GLOBAIS
+// VARIÁVEIS GLOBAIS ATE QUE SEJA POSSIVEL USAR ARQUIVOOOOOO
 produto *listaProdutos = NULL;
 int qtdProdutos = 0;
 int capProdutos = 0;
